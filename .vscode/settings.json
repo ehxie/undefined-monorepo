@@ -1,0 +1,58 @@
+{
+  //
+  "files.associations": {
+    "*.json": "jsonc", // 解决 JSON 文件注释报错
+    "README": "markdown"
+  },
+  "search.useIgnoreFiles": true, // 开启搜索时忽略文件
+  "search.exclude": {
+    "**/build": true,
+    "**/output": true,
+    "**/dist": true,
+    "**/*.lock": true,
+    "**/*.log": true,
+    "**/package-lock.json": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
+  //
+  "editor.formatOnSave": true, // 保存自动格式化
+  //
+  "editor.rulers": [80, 120], // 屏幕竖线
+  //
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 格式化默认使用 prettier
+  //
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 80,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.endOfLine": "auto",
+  "prettier.arrowParens": "avoid", // 箭头函数只有一个参数则去掉括号
+  "prettier.bracketSpacing": true, // {a:'a'} 变成 { a: 'a' }
+  "prettier.jsxBracketSameLine": true, // JSX 语法标签末尾 `>` 不换行显示
+  //
+  "todo-tree.general.tags": ["FIXME:", "TODO:", "BUG:"],
+  "todo-tree.highlights.defaultHighlight": {
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO:": {
+      "foreground": "#fff",
+      "background": "#ffbd2a",
+      "iconColour": "#ffbd2a"
+    },
+    "BUG:": {
+      "icon": "bug",
+      "foreground": "#fff",
+      "background": "#f53f3f",
+      "iconColour": "#f53f3f"
+    },
+    "FIXME:": {
+      "icon": "flame",
+      "foreground": "#fff",
+      "background": "#f06292",
+      "iconColour": "#f06292"
+    }
+  }
+}
