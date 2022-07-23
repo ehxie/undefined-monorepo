@@ -292,6 +292,8 @@ window.addEventListener("message", (event) => {
 
 ## 黑客攻击的两种办法
 
+### 攻击
+
 `假如不设置 targetOrigin 也不对接收到的数据进行处理`
 
 黑客有两种攻击方法
@@ -313,4 +315,25 @@ window.addEventListener("message", (event) => {
     false
   );
 </script>
+```
+
+### 防御
+
+`发送方`指定 targetOrigin
+
+```js
+// otherWindow 为目标 window 对象，只有当目标对象的 url 为 `www.test.com` 才会发送消息
+otherWindow.postMessage(data, "www.test.com");
+```
+
+`接收方`过滤 origin
+
+```js
+// 只接收来自 `www.abc.com"` 的消息
+window.addEventListener("message", (event) => {
+  if (event.origin !== "www.abc.com") {
+    return;
+  }
+  // ...
+});
 ```
